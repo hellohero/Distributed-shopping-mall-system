@@ -61,6 +61,7 @@
         <security.version>3.2.3.RELEASE</security.version>
         <solrj.version>4.10.3</solrj.version>
         <ik.version>2012_u6</ik.version>
+        <versions.java-security-toolkit>1.0.7</versions.java-security-toolkit>
     </properties>
 
     <dependencyManagement>
@@ -282,6 +283,12 @@
                 <groupId>xml-apis</groupId>
                 <artifactId>xml-apis</artifactId>
                 <version>1.4.01</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.pixee</groupId>
+                <artifactId>java-security-toolkit</artifactId>
+                
+                <version>${versions.java-security-toolkit}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
