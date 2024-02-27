@@ -2,6 +2,7 @@ package com.pyg.manage.controller;
 
 import com.pyg.util.FastDFSClient;
 import entity.Result;
+import io.github.pixee.security.Filenames;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,7 @@ public class UploadController {
     @RequestMapping("upload")
     public Result upload(MultipartFile file){
     //获取文件的扩展名
-        String filename = file.getOriginalFilename();
+        String filename = Filenames.toSimpleFileName(file.getOriginalFilename());
         String substring = filename.substring(filename.lastIndexOf(".") + 1);
         try {
             //创建一个FastDFS客户端
